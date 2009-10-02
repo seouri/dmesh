@@ -1,0 +1,5 @@
+<ul>
+<% @books.each do |book| -%>
+  <li><%=link_to book.title, book %> (<%= book.pages_count %>)</li>
+<% end -%>
+</ul>

@@ -1,0 +1,25 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+ "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<title><%= yield(:page_title) || controller.controller_name.titleize %>: dMeSH</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/combo?2.8.0r4/build/reset-fonts-grids/reset-fonts-grids.css&2.8.0r4/build/base/base-min.css">
+<%= stylesheet_link_tag "default" %>
+</head>
+<body>
+<div id="doc4" class="yui-t7">
+<div id="hd">
+  dMeSH: digitize MeSH
+</div><!-- #hd -->
+<div id="bd">
+<%= yield %>
+</div><!-- #bd -->
+<div id="ft">
+  <%= link_to("Source Code", "http://github.com/seouri/dmesh", :target => "_blank") %>
+  <%= link_to("Issue Tracker", "http://github.com/seouri/dmesh/issues", :target => "_blank") %>
+</div><!-- #ft -->
+</div><!-- #doc4 -->
+</body>
+</html>
+
