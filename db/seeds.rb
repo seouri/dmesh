@@ -7,4 +7,7 @@
 #   Major.create(:name => 'Daley', :city => cities.first)
 (1963 .. 1996).each do |year|
   book = Book.create(:title => year)
+  (1 .. 30).each do |page|
+    page = book.pages.create(:name => page)
+  end
 end

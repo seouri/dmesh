@@ -1,2 +1,7 @@
-<h1><%=h @book.title %></h1>
-<%= link_to 'Back', books_path %>
+<h1><%= @book.title %> (<%= @book.pages.size %>)</h1>
+
+<ul class="pages">
+<% for page in @book.pages -%>
+  <li class="page"><%= link_to page.name, page_url(:book_title => @book.title, :page_name => page.name) %></li>
+<% end -%>
+</ul>

@@ -1,0 +1,6 @@
+<h1><%= link_to @book.title, book_path(:book_title => @book.title) %></h1>
+<h2><%= @page.name %></h2>
+
+<% form_for :page, @page, :url => { :action => 'update', :id => @page } do |f| %>
+  Done? <%= f.check_box :is_done, :onchange => "submit()" %>
+<% end %>

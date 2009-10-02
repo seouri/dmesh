@@ -2,7 +2,7 @@
  "http://www.w3.org/TR/html4/strict.dtd">
 <html>
 <head>
-<title><%= yield(:page_title) || controller.controller_name.titleize %>: dMeSH</title>
+<title>dMeSH : digitize MeSH</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/combo?2.8.0r4/build/reset-fonts-grids/reset-fonts-grids.css&2.8.0r4/build/base/base-min.css">
 <%= stylesheet_link_tag "default" %>
@@ -10,7 +10,7 @@
 <body>
 <div id="doc4" class="yui-t7">
 <div id="hd">
-  dMeSH: digitize MeSH
+  <%= link_to_unless_current "dMeSH: digitize MeSH", root_url %>
 </div><!-- #hd -->
 <div id="bd">
 <%= yield %>

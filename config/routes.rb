@@ -1,5 +1,11 @@
 ActionController::Routing::Routes.draw do |map|
-  map.resources :books
+  map.root :controller => 'books'
+  map.book ':book_title', :controller => 'books', :action => 'show'
+  map.page ':book_title/:page_name', :controller => 'pages',
+              :action => 'show',
+              :book_title => /\d{4}/,
+              :page_name => /\d+/
+  #map.resources :books, :has_many => :pages
 
   # The priority is based upon order of creation: first created -> highest priority.
 
