@@ -1,5 +1,4 @@
-<h1><%= link_to @book.title, book_path(:book_title => @book.title) %></h1>
-<h2><%= @page.name %></h2>
+<h1><%= link_to @book.title, book_path(:book_title => @book.title) %>: Page <%= @page.name %>: <%= pluralize(@page.lines.size, 'line') %></h1>
 
 <% form_for :line, @line, :url => { :controller => 'lines', :action => 'create' } do |f| %>
   <%= f.error_messages %>
