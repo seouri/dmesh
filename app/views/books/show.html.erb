@@ -1,7 +1,7 @@
-<h1><%= @book.title %> (<%= @book.pages.size %>)</h1>
+<h1><%= @book.title %> [<%= @book.pages.size %> pages]</h1>
 
-<ul class="pages">
+<ul class="pages" id="pages">
 <% for page in @book.pages -%>
-  <li class="page"><%= link_to page.name, page_url(:book_title => @book.title, :page_name => page.name) %></li>
+  <li class="page <%= page.progress %>" id="<%= dom_id(page) %>"><%= link_to page.name, page_url(:book_title => @book.title, :page_name => page.name) %></li>
 <% end -%>
 </ul>

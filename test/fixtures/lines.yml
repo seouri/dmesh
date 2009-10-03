@@ -1,0 +1,11 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  page_id: 1
+  term_id: 1
+  tree_number: MyString
+
+two:
+  page_id: 1
+  term_id: 1
+  tree_number: MyString

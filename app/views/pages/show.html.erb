@@ -1,6 +1,21 @@
 <h1><%= link_to @book.title, book_path(:book_title => @book.title) %></h1>
 <h2><%= @page.name %></h2>
 
+<% form_for :line, @line, :url => { :controller => 'lines', :action => 'create' } do |f| %>
+  <%= f.error_messages %>
+  <%= f.hidden_field :page_id %>
+<ol id="line" class="lines">
+  <% for line in @page.lines -%>
+  <li id="<%= dom_id(line) %>" class="line"><span class="term" id="<%= dom_id(line.term) %>"><span class="level<%= line.level %>"></span><%= line.term.string %></span><span class="tree_number" id="<%= dom_id(line) + "_tree_number" %>"><%= line.tree_number %></span><%= radio_button_tag 'parent_line', line.id, false, :disabled => @page.is_done? %></li>
+  <% end -%>
+</ol>
+  <% f.fields_for :term do |t| %>
+    <%= t.text_field :string, :disabled => @page.is_done? %>
+  <% end -%>
+  <%= f.text_field :tree_number, :disabled => @page.is_done? %>
+  <%= submit_tag 'add', :disabled => @page.is_done? %>
+<% end -%>
+
 <% form_for :page, @page, :url => { :action => 'update', :id => @page } do |f| %>
   Done? <%= f.check_box :is_done, :onchange => "submit()" %>
 <% end %>

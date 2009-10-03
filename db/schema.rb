@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20091002040032) do
+ActiveRecord::Schema.define(:version => 20091002173831) do
 
   create_table "books", :force => true do |t|
     t.string   "title"
@@ -18,7 +18,17 @@ ActiveRecord::Schema.define(:version => 20091002040032) do
     t.datetime "updated_at"
   end
 
-  add_index "books", ["title"], :name => "index_books_on_title"
+  add_index "books", ["title"], :name => "index_books_on_title", :unique => true
+
+  create_table "lines", :force => true do |t|
+    t.integer  "page_id",     :null => false
+    t.integer  "term_id",     :null => false
+    t.string   "tree_number", :null => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "lines", ["page_id"], :name => "index_lines_on_page_id"
 
   create_table "pages", :force => true do |t|
     t.integer  "book_id"
@@ -30,5 +40,13 @@ ActiveRecord::Schema.define(:version => 20091002040032) do
   end
 
   add_index "pages", ["book_id", "name"], :name => "index_pages_on_book_id_and_name"
+
+  create_table "terms", :force => true do |t|
+    t.string   "string",     :null => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "terms", ["string"], :name => "index_terms_on_string", :unique => true
 
 end

@@ -1,0 +1,166 @@
+#hd {
+  border-bottom: 1px solid #333;
+  font-weight: bold;
+  color: #333;
+}
+
+#hd a, #hd a:visited, #ft a, #ft a:visited {
+  color: #333;
+  text-decoration: none;
+}
+
+#hd a:hover, #ft a:hover {
+  color: #666;
+}
+
+#ft {
+  margin-top: 1em;
+  font-size: 77%;
+  border-top: 1px solid #333;
+  color: #333;
+  text-align: right;
+}
+
+.book {
+  font-size: 197%;
+  display: block;
+  float: left;
+  width: 6.25em;
+  text-align: center;
+}
+
+.book a {
+  text-decoration: none;
+  color: #333;
+  display: block;
+  border: 1px solid #fff;
+  line-height: 2em;
+}
+
+.books, .pages {
+  margin: 0;
+}
+
+.page {
+  display: block;
+  float: left;
+  width: 2.8em;
+  text-align: center;
+}
+
+.page a, .page a:visited {
+  text-decoration: none;
+  color: #333;
+  display: block;
+  border: 1px solid #fff;
+  line-height: 1.75em;
+}
+
+.book a:hover, .page a:hover {
+  border: 1px solid #333;
+}
+
+.fresh {
+  background-color: #fdd;
+}
+
+.inprogress {
+  background-color: #ffb;  
+}
+
+.done {
+  background-color: #dfd;
+}
+
+.lines input[type="radio"] {
+  float: right;
+}
+
+.line {
+  float: left;
+  width: 100%;
+  border: 1px solid #fff;
+  border-bottom: 1px solid #ccc;
+}
+
+.term {
+  display: block;
+  width: 42em;
+  float: left;
+}
+
+.tree_number {
+  display: block;
+  width: 25em;
+  float: left;
+}
+
+#line_term_string {
+  width: 42em;
+  height: 1.5em;
+  margin-top: 0.5em;
+  margin-left: 2em;
+  border: 1px solid #333;
+}
+
+input[disabled="disabled"]#line_term_string, input[disabled="disabled"]#line_tree_number {
+  border: 1px solid #ccc;
+}
+
+#line_tree_number {
+  width: 25em;
+  height: 1.5em;
+  border: 1px solid #333;
+}
+
+.level0 {
+  padding-left: 0;
+}
+
+.level1 {
+  padding-left: 1em;
+}
+
+.level2 {
+  padding-left: 2em;
+}
+
+.level3 {
+  padding-left: 3em;
+}
+
+.level4 {
+  padding-left: 4em;
+}
+
+.level5 {
+  padding-left: 5em;
+}
+
+.level6 {
+  padding-left: 6em;
+}
+
+.level7 {
+  padding-left: 7em;
+}
+
+.level8 {
+  padding-left: 8em;
+}
+
+.level9 {
+  padding-left: 9em;
+}
+
+.level10 {
+  padding-left: 10em;
+}
+
+.level11 {
+  padding-left: 11em;
+}
+
+.level12 {
+  padding-left: 12em;
+}

@@ -1,0 +1,24 @@
+<h1>Editing line</h1>
+
+<% form_for(@line) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :page_id %><br />
+    <%= f.text_field :page_id %>
+  </p>
+  <p>
+    <%= f.label :term_id %><br />
+    <%= f.text_field :term_id %>
+  </p>
+  <p>
+    <%= f.label :tree_number %><br />
+    <%= f.text_field :tree_number %>
+  </p>
+  <p>
+    <%= f.submit 'Update' %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @line %> |
+<%= link_to 'Back', lines_path %>

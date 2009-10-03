@@ -1,7 +1,8 @@
 ActionController::Routing::Routes.draw do |map|
   map.root :controller => 'books'
   map.book ':book_title', :controller => 'books', :action => 'show'
-  map.page ':book_title/:page_name', :controller => 'pages',
+  map.page ':book_title/:page_name',
+              :controller => 'pages',
               :action => 'show',
               :book_title => /\d{4}/,
               :page_name => /\d+/

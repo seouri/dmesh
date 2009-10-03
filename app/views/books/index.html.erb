@@ -1,5 +1,5 @@
-<ul class="books">
+<ul class="books" id="books">
 <% @books.each do |book| -%>
-  <li class="book"><%=link_to book.title, book_url(book.title) %> (<%= book.pages_count %>)</li>
+  <li class="book" id="<%= dom_id(book) %>"><%=link_to "#{book.title} [#{book.pages_count}]", book_url(book.title) %></li>
 <% end -%>
 </ul>

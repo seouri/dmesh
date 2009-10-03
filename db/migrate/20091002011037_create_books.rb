@@ -6,7 +6,7 @@ class CreateBooks < ActiveRecord::Migration
 
       t.timestamps
     end
-    add_index :books, :title
+    add_index :books, :title, :unique => true
   end
 
   def self.down
