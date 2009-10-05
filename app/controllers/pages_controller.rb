@@ -3,6 +3,7 @@ class PagesController < ApplicationController
     @book = Book.find_by_title(params[:book_title])
     @page = Page.find_by_book_id_and_name(@book.id, params[:page_name])
     @line = @page.lines.new
+    @line.book_id = @book.id
 
     respond_to do |format|
       format.html

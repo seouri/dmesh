@@ -3,7 +3,7 @@ class CreateBooks < ActiveRecord::Migration
     create_table :books do |t|
       t.string :title
       t.integer :pages_count, :default => 0
-
+      t.integer :lines_count, :default => 0
       t.timestamps
     end
     add_index :books, :title, :unique => true

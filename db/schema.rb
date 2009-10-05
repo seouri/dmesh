@@ -14,6 +14,7 @@ ActiveRecord::Schema.define(:version => 20091002173831) do
   create_table "books", :force => true do |t|
     t.string   "title"
     t.integer  "pages_count", :default => 0
+    t.integer  "lines_count", :default => 0
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -21,6 +22,7 @@ ActiveRecord::Schema.define(:version => 20091002173831) do
   add_index "books", ["title"], :name => "index_books_on_title", :unique => true
 
   create_table "lines", :force => true do |t|
+    t.integer  "book_id",     :null => false
     t.integer  "page_id",     :null => false
     t.integer  "term_id",     :null => false
     t.string   "tree_number", :null => false
@@ -28,6 +30,7 @@ ActiveRecord::Schema.define(:version => 20091002173831) do
     t.datetime "updated_at"
   end
 
+  add_index "lines", ["book_id", "tree_number"], :name => "index_lines_on_book_id_and_tree_number"
   add_index "lines", ["page_id"], :name => "index_lines_on_page_id"
 
   create_table "pages", :force => true do |t|

@@ -1,4 +1,5 @@
 #hd {
+  margin-bottom: 1em;
   border-bottom: 1px solid #333;
   font-weight: bold;
   color: #333;
@@ -21,30 +22,39 @@
   text-align: right;
 }
 
+.books {
+  margin: 1em 0;
+  padding: 0;
+}
 .book {
-  font-size: 197%;
   display: block;
   float: left;
-  width: 6.25em;
+  width: 10%;
   text-align: center;
 }
 
 .book a {
+  padding: 1em 0;
   text-decoration: none;
   color: #333;
   display: block;
-  border: 1px solid #fff;
-  line-height: 2em;
+  border: 1px solid #eee;
 }
 
 .books, .pages {
   margin: 0;
 }
 
+.book_title {
+	font-size: 197%;
+}
+.pages_count, .lines_count {
+	font-size: 77%;
+}
 .page {
   display: block;
   float: left;
-  width: 2.8em;
+  width: 4%;
   text-align: center;
 }
 
@@ -95,22 +105,36 @@
   float: left;
 }
 
-#line_term_string {
-  width: 42em;
-  height: 1.5em;
-  margin-top: 0.5em;
-  margin-left: 2em;
+#new_term {
+  margin-left: -0.35em;
+  margin-right: 0.1em;
+  padding: 0 0.1em;
+  width: 41.8em;
   border: 1px solid #333;
+}
+#line_term_string {
+  border: 1px solid #fff;
+  width: 99.35%;
+  height: 1.5em;
 }
 
 input[disabled="disabled"]#line_term_string, input[disabled="disabled"]#line_tree_number {
   border: 1px solid #ccc;
 }
 
-#line_tree_number {
-  width: 25em;
-  height: 1.5em;
+#new_line_tree_number {
+  margin-right: 0.25em;
+  width: 24.5em;
   border: 1px solid #333;
+}
+#line_tree_number {
+  border: 1px solid #fff;
+  width: 99%;
+  height: 1.5em;
+}
+
+#new_line input[type="submit"] {
+  float: right;
 }
 
 .level0 {

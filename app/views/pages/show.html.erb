@@ -2,17 +2,18 @@
 
 <% form_for :line, @line, :url => { :controller => 'lines', :action => 'create' } do |f| %>
   <%= f.error_messages %>
+  <%= f.hidden_field :book_id %>
   <%= f.hidden_field :page_id %>
-<ol id="line" class="lines">
+  <ol id="line" class="lines">
   <% for line in @page.lines -%>
-  <li id="<%= dom_id(line) %>" class="line"><span class="term" id="<%= dom_id(line.term) %>"><span class="level<%= line.level %>"></span><%= line.term.string %></span><span class="tree_number" id="<%= dom_id(line) + "_tree_number" %>"><%= line.tree_number %></span><%= radio_button_tag 'parent_line', line.id, false, :disabled => @page.is_done? %></li>
-  <% end -%>
-</ol>
-  <% f.fields_for :term do |t| %>
-    <%= t.text_field :string, :disabled => @page.is_done? %>
-  <% end -%>
-  <%= f.text_field :tree_number, :disabled => @page.is_done? %>
-  <%= submit_tag 'add', :disabled => @page.is_done? %>
+    <li id="<%= dom_id(line) %>" class="line"><span class="term" id="<%= dom_id(line.term) %>"><span class="level<%= line.level %>"></span><%= line.term.string %></span><span class="tree_number" id="<%= dom_id(line) + "_tree_number" %>"><%= line.tree_number %></span><%= radio_button_tag 'parent_line', line.id, false, :disabled => @page.is_done? %></li>
+  <% end %>
+<% f.fields_for :term do |t| %>
+    <li id="new_line" class="line"><span class="term" id="new_term"><%= t.text_field :string, :disabled => @page.is_done? %></span>
+  <% end %>
+  <span class="tree_number" id="new_line_tree_number"><%= f.text_field :tree_number, :disabled => @page.is_done? %></span>
+  <%= submit_tag 'add', :disabled => @page.is_done? %></li>
+  </ol>
 <% end -%>
 
 <% form_for :page, @page, :url => { :action => 'update', :id => @page } do |f| %>

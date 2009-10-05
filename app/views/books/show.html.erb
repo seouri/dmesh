@@ -1,4 +1,4 @@
-<h1><%= @book.title %>: <%= pluralize(@book.pages.size, 'page') %></h1>
+<h1><%= @book.title %>: <%= pluralize(@book.pages.size, 'page') %>: <%= pluralize(@book.lines.size, 'line') %></h1>
 
 <ul class="pages" id="pages">
 <% for page in @book.pages -%>
