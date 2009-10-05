@@ -1,7 +1,7 @@
 class Line < ActiveRecord::Base
   belongs_to :book, :counter_cache => true
   belongs_to :page, :counter_cache => true
-  belongs_to :term
+  belongs_to :term, :counter_cache => true
   
   validates_associated :page, :term
   validates_presence_of :page_id, :term_id, :tree_number

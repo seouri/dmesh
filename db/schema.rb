@@ -45,11 +45,12 @@ ActiveRecord::Schema.define(:version => 20091002173831) do
   add_index "pages", ["book_id", "name"], :name => "index_pages_on_book_id_and_name"
 
   create_table "terms", :force => true do |t|
-    t.string   "string",     :null => false
+    t.string   "string",                     :null => false
+    t.integer  "lines_count", :default => 0
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  add_index "terms", ["string"], :name => "index_terms_on_string", :unique => true
+  add_index "terms", ["string"], :name => "index_terms_on_string"
 
 end
