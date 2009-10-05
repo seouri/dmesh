@@ -46,3 +46,7 @@ pages.each do |p|
     p = book.pages.create(:name => page)
   end
 end
+
+File.foreach(File.join(File.dirname(__FILE__), 'terms.dat')) do |term|
+  Term.create(:string => term.rstrip)
+end
