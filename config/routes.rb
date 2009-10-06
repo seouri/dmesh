@@ -6,6 +6,9 @@ ActionController::Routing::Routes.draw do |map|
               :action => 'show',
               :book_title => /\d{4}/,
               :page_name => /\d+/
+  map.autocomplete ':book_title/auto_complete_for_term_string',
+              :controller => 'terms',
+              :action => 'auto_complete_for_term_string'
   #map.resources :books, :has_many => :pages
 
   # The priority is based upon order of creation: first created -> highest priority.
