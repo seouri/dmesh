@@ -1,12 +1,14 @@
-<h1><%= link_to @book.title, book_path(:book_title => @book.title) %>: Page <%= @page.name %>: <%= pluralize(@page.lines.size, 'line') %></h1>
-
+<h1><%= link_to @book.title, book_path(:book_title => @book.title) %>: Page <%= @page.name %>: <%= pluralize(@page.lines.size, 'line') %> (<%= elapsed_time(@page) %> spent)</h1>
+<% if flash[:notice] %>
+      <div class="notice"><%= flash[:notice] %></div>
+<% end %>
 <% form_for :line, @line, :url => { :controller => 'lines', :action => 'create' } do |f| %>
   <%= f.error_messages %>
   <%= f.hidden_field :book_id %>
   <%= f.hidden_field :page_id %>
   <ol id="line" class="lines">
   <% for line in @page.lines -%>
-    <li id="<%= dom_id(line) %>" class="line"><span class="term" id="<%= dom_id(line.term) %>"><span class="level<%= line.level %>"></span><%= line.term.string %></span><span class="tree_number" id="<%= dom_id(line) + "_tree_number" %>"><%= line.tree_number %></span><%= radio_button_tag 'parent_line', line.id, false, :disabled => @page.is_done? %></li>
+    <li id="<%= dom_id(line) %>" class="line"><span class="term" id="<%= dom_id(line.term) %>"><span class="level<%= line.level %>"></span><%= line.term.string %></span><span class="tree_number" id="<%= dom_id(line) + "_tree_number" %>"><%= line.tree_number %></span><%= link_to_unless @page.is_done?, 'delete', { :controller => 'lines', :action => 'destroy', :id => line.id }, :confirm => "Delete \"#{line.term.string}\" at #{line.tree_number}?" %></li>
   <% end %>
 <% f.fields_for :term do |t| %>
     <li id="new_line" class="line"><span class="term" id="new_term"><%= t.text_field :string, :disabled => @page.is_done?, :autocomplete =>"off" %></span>

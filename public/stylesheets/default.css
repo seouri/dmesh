@@ -190,6 +190,10 @@ input[disabled="disabled"]#line_term_string, input[disabled="disabled"]#line_tre
   padding-left: 12em;
 }
 
+.notice {
+  padding: 0.5em;
+  border: 1px solid #a00;
+}
 /* START: jQuery Autocomplete plugin 1.1 */
 .ac_results {
 	padding: 0px;
